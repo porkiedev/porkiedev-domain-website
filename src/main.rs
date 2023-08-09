@@ -30,7 +30,7 @@ async fn main() -> std::io::Result<()> {
             .service(static_stylesheet)
             // .service(actix_files::Files::new("/static", "files/static"))
     })
-        .bind(("0.0.0.0", 8080))?
+        .bind(("0.0.0.0", 80))?
         .run()
         .await
 }
