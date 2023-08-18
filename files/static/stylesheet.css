@@ -3,52 +3,45 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    /* background-color: #222222; */
     background-color: #252525;
-    color: crimson;
-    text-align: center;
+    color: darkgoldenrod;
 
     padding-top: 2.5rem;
+    padding-bottom: 2rem;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial;
 }
 
 
-/* Text colors */
-p {
-    color: orange;
-}
-
-
-/* Hyperlinks */
-a {
+/* Colored Hyperlinks */
+#actix-hyperlink {
     color: darkslategray;
+    text-decoration: none;
+}
+#actix-hyperlink:hover {
+    color: darkslategray;
+    text-decoration: underline;
 }
 
 
 /* Header and footer */
-.main_header {
+.main-header, .main-footer {
     background-color: #181818;
+    color: orangered;
     width: 100%;
-    height: 2.5rem;
-    position: absolute;
-    top: 0;
+    position: fixed;
 
     display: flex;
-    
     align-items: center;
     justify-content: space-around;
 }
 
-.main-footer {
-    background-color: #181818;
-    width: 100%;
-    height: 2rem;
-    position: absolute;
-    bottom: 0;
+.main-header {
+    height: 2.5rem;
+    top: 0;
+}
 
-    display: flex;
-    
-    align-items: center;
-    justify-content: space-around;
+.main-footer {
+    height: 2rem;
+    bottom: 0;
 }
