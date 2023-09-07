@@ -1,3 +1,4 @@
 /target
+/.vscode
 Cargo.lock
 website_v1.iml
