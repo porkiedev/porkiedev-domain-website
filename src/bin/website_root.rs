@@ -12,7 +12,7 @@ use tracing_subscriber::util::SubscriberInitExt;
 #[get("/")]
 async fn index() -> impl Responder {
     // Respond with the index file
-    NamedFile::open_async("./assets/index.html").await
+    NamedFile::open_async("./assets/root/index.html").await
 }
 
 #[actix_web::main]
@@ -35,7 +35,7 @@ async fn main() -> std::io::Result<()> {
             // Include the logger middleware
             .wrap(web::Logger)
             .service(index)
-            .service(Files::new("/assets", "assets"))
+            .service(Files::new("/assets", "assets/root"))
     })
         .bind(("0.0.0.0", 80))?
         .run()
