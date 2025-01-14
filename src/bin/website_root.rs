@@ -3,7 +3,7 @@
 //
 
 use actix_files::{Files, NamedFile};
-use actix_web::{get, App, HttpServer, Responder};
+use actix_web::{App, HttpServer, Responder};
 use tracing::{info, Level};
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
