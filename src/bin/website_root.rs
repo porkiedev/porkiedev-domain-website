@@ -9,7 +9,6 @@ use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
 
 /// Serve the root path
-#[get("/")]
 async fn index() -> impl Responder {
     // Respond with the index file
     NamedFile::open_async("./assets/root/index.html").await
@@ -34,7 +33,8 @@ async fn main() -> std::io::Result<()> {
         App::new()
             // Include the logger middleware
             .wrap(web::Logger)
-            .service(index)
+            .route("/", actix_web::web::get().to(index))
+            .route("/{_}", actix_web::web::get().to(index))
             .service(Files::new("/assets", "assets/root/assets"))
     })
         .bind(("0.0.0.0", 80))?
