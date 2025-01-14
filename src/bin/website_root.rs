@@ -35,7 +35,7 @@ async fn main() -> std::io::Result<()> {
             // Include the logger middleware
             .wrap(web::Logger)
             .service(index)
-            .service(Files::new("/assets", "assets/root"))
+            .service(Files::new("/assets", "assets/root/assets"))
     })
         .bind(("0.0.0.0", 80))?
         .run()

@@ -44,7 +44,6 @@ where
     forward_ready!(service);
 
     fn call(&self, req: ServiceRequest) -> Self::Future {
-        tracing::info!("Incoming request");
 
         // Get the request headers
         let headers = req.headers();
